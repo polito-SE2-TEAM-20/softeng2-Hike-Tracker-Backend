@@ -1,4 +1,4 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, Index, PrimaryGeneratedColumn } from 'typeorm';
 
 import { PointType } from '../enums';
 
@@ -14,8 +14,11 @@ export class Point {
   })
   type!: PointType;
 
+  @Index({ spatial: true })
   @Column({
     type: 'geography',
+    spatialFeatureType: 'Point',
+    srid: 4326,
     nullable: false,
   })
   position!: any;

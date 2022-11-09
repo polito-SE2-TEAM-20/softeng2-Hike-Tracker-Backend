@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { entities } from '../libs/common/src';
+import { entities } from '@app/common';
+
+import { HikesModule } from './hikes/hikes.module';
 
 @Module({
   imports: [
@@ -22,6 +24,7 @@ import { entities } from '../libs/common/src';
       logging: !!process.env.SQL_LOGGING ? true : ['error'],
       synchronize: !!process.env.SYNCHRONIZE,
     }),
+    HikesModule,
   ],
   controllers: [],
   providers: [],

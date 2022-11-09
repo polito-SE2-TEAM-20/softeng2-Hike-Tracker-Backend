@@ -5,9 +5,11 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "target": "es2017",
     "sourceMap": true,
+    "strict": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
@@ -25,5 +27,7 @@
         "libs/common/src/*"
       ]
     }
-  }
+  },
+  "include": ["src/**/*", "test", "libs"],
+  "exclude": ["node_modules", "dist"]
 }
